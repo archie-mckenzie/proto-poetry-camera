@@ -6,13 +6,30 @@
 import openai
 import replicate
 import os
+import threading
+import time
 
 # ----- EDITABLE VARIABLES -----  #
 
-image_path = "./princeton.jpeg" # path to image
+image_path = "./images/princeton_snowy.jpeg" # path to image
 
 openai.api_key = "" # OpenAI API Key
 REPLICATE_API_TOKEN = "" # Replicate API Key
+
+# ----- TIME PRINTING -----  #
+
+def print_time():
+    global t
+    while True:
+        time.sleep(1)
+        t += 1
+        print(t)
+
+t = 0
+stop_event = threading.Event()
+thread = threading.Thread(target=print_time)
+thread.daemon = True
+thread.start()
 
 # ----- DRIVER INITIALIZATION -----  #
 
@@ -42,13 +59,30 @@ completion = openai.ChatCompletion.create(
   model="gpt-3.5-turbo",
   messages=[
         {"role": "system", "content": "You are a poet AI who writes poems based on the images you are told about."},
-        {"role": "user", "content": f"Write me a poem about the following image: ${image_description}"},
+        {"role": "user", "content": f"Write a brief, clever poem about the following image: {image_description}"},
     ]
 )
 poem = completion['choices'][0]['message']['content']
+
+stop_event.set()
 
 # ----- PRINT RESULT -----  #
 
 print("# ------ POETRY CAMERA ------ #")
 print("\n" + poem + "\n")
-print("# ------ #")
+print("# ------ END ------ #")
+
+# ----- WRITE .TXT -----  #
+
+file = open("poem.txt", "w")
+
+# Write some text to the file
+file.write("# ------ POETRY CAMERA ------ #")
+file.write("\n\n")
+file.write(poem)
+file.write("\n\n")
+file.write(f"Inspired by an image of {image_description}")
+file.write("\n\n")
+file.write("# ------ END ------ #")
+
+file.close()
