@@ -11,7 +11,7 @@ import time
 
 # ----- EDITABLE VARIABLES -----  #
 
-image_path = "./images/princeton_snowy.jpeg" # path to image
+image_path = "images/man_riding.jpg" # path to image
 
 openai.api_key = "" # OpenAI API Key
 REPLICATE_API_TOKEN = "" # Replicate API Key
@@ -49,7 +49,7 @@ os.environ["REPLICATE_API_TOKEN"] = REPLICATE_API_TOKEN
 # ----- PROCESS PHOTO -----  #
 
 image_description = replicate.run(
-    "j-min/clip-caption-reward:de37751f75135f7ebbe62548e27d6740d5155dfefdf6447db35c9865253d7e06",
+    "andreasjansson/blip-2:4b32258c42e9efd4288bb9910bc532a69727f9acd26aa08e175713a0a857a608",
     input={"image": open(image_path, "rb")}
 )
 

@@ -1,10 +1,10 @@
 # ------ POETRY CAMERA ------ #
 
-The building stands tall and bright,
-With windows glowing in the night,
-While down below in snowy slush,
-A lone pole stands, a cold hush.
+A man on wheels he rides,
+Without a care in the world besides,
+Balancing on a Segway with ease,
+As he glides along the city breeze.
 
-Inspired by an image of a large building with lights and a pole in the snowy street
+Inspired by an image of a man riding a segway
 
 # ------ END ------ #
