@@ -76,7 +76,6 @@ print("# ------ END ------ #")
 
 file = open("poem.txt", "w")
 
-# Write some text to the file
 file.write("# ------ POETRY CAMERA ------ #")
 file.write("\n\n")
 file.write(poem)
