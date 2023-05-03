@@ -1,5 +1,5 @@
 # snapwrite.py
-# proof of concept for Louis Anslow's PhotoCamera project
+# proof of concept for Louis Anslow's PoetryCamera project
 # © Archie McKenzie, 2023
 
 # ----- IMPORTS -----  #
