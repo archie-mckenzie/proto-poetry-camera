@@ -9,6 +9,6 @@ Run `snapwrite.py` with your own images and API keys:
     <li>Replace the three variables in `EDITABLE VARIABLES` with the filepath of your image, your OpenAI API key, and your Replicate API key respectively</li>
     <li>Run `snapwrite.py`</li>
     <li>See the output in `poem.txt`</li>
-<ol>
+</ol>
 
 See `poem.txt` for the output of `snapwrite.py`.
